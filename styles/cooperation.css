@@ -1,0 +1,17 @@
+main {
+   display: flex;
+   flex-direction: column;
+}
+
+#first_half {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5vw;
+}
+
+#first_half__text {
+    font-size: 24pt;
+    font-weight: 300;
+    margin-left: 4vw;
+    margin-right: 6vw;
+}
