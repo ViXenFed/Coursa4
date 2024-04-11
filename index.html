@@ -12,11 +12,18 @@
 <body>
     <!-- Заголовок -->
     <header>
-        <a href="../index.html" class="header__links">Главная</a>
-        <a href="order.html" class="header__links">Сделать заказ</a>
-        <a href="cooperation.html" class="header__links">Сотрудничество</a>
-        <a href="about.html" class="header__links">О нас</a>
-        <A id="header__login" href="login.html">Войти</A>
+        <a href="index.html" class="header__links">Главная</a>
+        <a href="pages/order.html" class="header__links">Сделать заказ</a>
+        <a href="pages/cooperation.html" class="header__links">Сотрудничество</a>
+        <a href="pages/about.html" class="header__links">О нас</a>
+        <script>
+            if (localStorage.getItem('session')) {
+                document.querySelector('header').innerHTML += '<a href="pages/profile.html"><img src="img/capy_ava.png" alt=""></a>'
+                document.querySelector('header').innerHTML += '<A id="header__login" href="index.html" onclick="getOut()">Выйти</A>'
+            } else {
+                document.querySelector('header').innerHTML += '<A id="header__login" href="pages/login.html">Войти</A>'
+            }
+        </script>
     </header>
     <!-- Контент -->
     <main>

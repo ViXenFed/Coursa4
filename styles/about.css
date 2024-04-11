@@ -1,0 +1,50 @@
+#oneOfThree {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15vw; margin-right: 15vw;
+    font-size: 24pt;
+    font-weight: 300;
+}
+
+#twoOfThree {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vh;
+}
+
+.card {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 32vh;
+    border: 1px solid #ACACAC;
+    text-align: center;
+    padding: 2vh;
+    border-radius: 25px;
+}
+
+.card h2, .card p {
+    margin-bottom: 1.5vh;
+}
+
+.card p {
+    font-size: 20pt;
+    font-weight: 300;
+}
+
+.card button {
+  color: white;
+  background-color: #234444;
+  padding: 15px 30px 15px 30px;
+  border-radius: 36px;
+  font-size: 18pt;
+  transition: 0.3s;
+  text-decoration: none;
+  border: #234444 1px solid;
+  margin-bottom: 1.5vh;
+}
+
+.card button:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}

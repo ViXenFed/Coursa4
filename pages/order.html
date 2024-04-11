@@ -14,10 +14,20 @@
         <a href="order.html" class="header__links">Сделать заказ</a>
         <a href="cooperation.html" class="header__links">Сотрудничество</a>
         <a href="about.html" class="header__links">О нас</a>
-        <A id="header__login" href="login.html">Войти</A>
-    </header>
+        <script>
+            if (localStorage.getItem('session')) {
+                document.querySelector('header').innerHTML += '<a href="profile.html"><img src="../img/capy_ava.png" alt=""></a>'
+                document.querySelector('header').innerHTML += '<A id="header__login" href="../index.html" onclick="getOut()">Выйти</A>'
+            } else {
+                document.querySelector('header').innerHTML += '<A id="header__login" href="login.html">Войти</A>'
+            }
+        </script> 
+        </header>
     <!-- Content -->
-    <main>
+    
+    <script>
+        // вывод если не войдено в акк
+        const pageIfNotSession = `<main>
         <div class="ord_flex" id="ord_flex_f">
             <p id="p_ord_hed"><b>Сделать заказ</b></p>
             <div id="ord_btns">
@@ -29,8 +39,54 @@
         <div class="ord_flex" id="ord_flex_s">
             <img src="../img/capy_tea.png" alt="">
         </div>
-        
+        </main>`;
+        // вывод если войдено
+        const pageIfSession = `<main>
+        <div class="ord_flex" id="ord_flex_f">
+            <p id="p_ord_hed"><b>Сделать заказ</b></p>
+            <p style="font-size: 24pt; font-weight: 300;">
+                Заполните форму для заказа. После заполнения мы в течение недели свяжемся с Вами по предпочтительному способу. В случае если не сможем связаться этим способом - будем пробовать все остальные, пока не получим Вашего ответа.
+            </p>
+        </div>
+        <div class="ord_flex" id="ord_flex_s">
+            <img src="../img/capy_tea.png" alt="">
+        </div>
     </main>
+    <form id="reg_form">
+        <h2>Заказ</h2>
+        <input type="text" name="" id="orderName" class="reg_inp req" placeholder="Наименование заказа *" required>
+        <select name="" id="typeOrder" class="reg_inp req" required>
+            <option value="">--Выберите тип заказа-- *</option>
+            <option value="Design">Дизайн</option>
+            <option value="Tirazh">Тираж</option>
+            <option value="Edit">Редактура</option>
+            <option value="Public">Публикация</option>
+        </select>
+        <input type="text" name="" id="" class="reg_inp" placeholder="Краткое описание">
+        <input type="file" name="" id="coopMail" class="reg_inp" placeholder="Файл с содержимым заказа">
+        <select name="" id="" class="reg_inp"> 
+            <option value="">--Выберите Предпочтительный способ связи--</option>
+            <option value="tel">Телефонный звонок</option>
+            <option value="VK">ВКонтакте</option>
+            <option value="mail">Почта</option>
+        </select>
+        <input type="text" name="" id="vk" class="reg_inp req" placeholder="VK *" required>
+        <input type="tel" name="" id="coopName" class="reg_inp req" placeholder="Телефон *" required>
+        <input type="checkbox" name="obr" class="checkbox" id="obr" required>
+        <label for="obr" class="checkbox-label">Я согласен на обработку персональных данных</label><br>
+        <input type="checkbox" name="adv" class="checkbox">
+        <label for="adv" class="checkbox-label">Я согласен на рассылку рекламных сообщений</label><br>
+        <button name="" id="reg_sub" value="" onclick="saveOrder(event)">Отправить</button>
+    </form>`;
+    localStorage.session ? document.querySelector('body').innerHTML += pageIfSession : pageIfSession;
+    </script>
+
+    <dialog>
+        <h1>Успешно!</h1>
+        <p>Ваш заказ был сохранён. Вы можете в любой момент увидеть его в личном кабинете</p>
+        <button id="closeModal" onclick="document.querySelector('dialog').close()">Закрыть</button>
+    </dialog>
+
     <img src="../img/CircleText.png" alt="" class="rotate_text_ord">
     <!-- Footer -->
     <footer style="margin-top: 3vh;">
@@ -55,5 +111,8 @@
             <a href="tel:88005553535">88005553535</a>
         </div>
     </footer>
+    <!-- scripts -->
+    <script src="../js/login.js"></script>
+    <script src="../js/order.js"></script>
 </body>
 </html>

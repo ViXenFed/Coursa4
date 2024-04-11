@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сотрудничество</title>
+    <title>Авторизация</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/cooperation.css">
+    <link rel="stylesheet" href="../styles/login.css">
 </head>
 <body>
     <!-- Заголовок -->
@@ -21,25 +22,16 @@
             } else {
                 document.querySelector('header').innerHTML += '<A id="header__login" href="login.html">Войти</A>'
             }
-        </script>
+        </script>    
         </header>
     <!-- Content -->
     <main>
-        <div id="first_half">
-            <img src="../img/capy_glass.png" alt="">
-            <div id="first_half__text">
-                <p><b>Сотрудничать с нами!</b></p>
-                <p>Главное условие нашего сотрудничества - взаимоуважение сторон. Для каждого автора мы рассчитываем процент индивидуально, и индивидуально обговариваем наше сотрудничество</p>
-            </div>
-        </div>
-        <form id="scnd_half">
-            <h2>Регистрация</h2>
-            <input type="text" name="" id="" class="half_inp" placeholder="Фамилия">
-            <input type="text" name="" id="coopName" class="half_inp" placeholder="Имя">
-            <input type="text" name="" id="" class="half_inp" placeholder="Отчество">
-            <input type="email" name="" id="coopMail" class="half_inp" placeholder="Почта">
-            <input type="text" name="" id="coopPwd" class="half_inp" placeholder="Пароль">
-            <input type="submit" name="" id="half_sub" value="Сотрудничать с нами!" onclick="getCoop(event)">
+        <form id="reg_form">
+            <h2>Вход</h2>
+            <input type="email" name="" id="" class="reg_inp" placeholder="Почта">
+            <input type="text" name="" id="" class="reg_inp" placeholder="Пароль">
+            <input type="submit" name="" id="reg_sub" value="Войти в личный кабинет" onclick="getCoop()">
+            <a href="login.html" id="toAuth">Нет аккаунта?</a>
         </form>
     </main>
     <!-- Footer -->
@@ -65,7 +57,5 @@
             <a href="tel:88005553535">88005553535</a>
         </div>
     </footer>
-    <!-- Script -->
-    <script src="../JS/login.js"></script>
 </body>
 </html>

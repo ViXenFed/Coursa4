@@ -1,31 +1,14 @@
-main {
-   display: flex;
-   flex-direction: column;
-}
-
-#first_half {
-    display: flex;
-    flex-direction: row;
-    margin-left: 5vw;
-}
-
-#first_half__text {
-    font-size: 24pt;
-    font-weight: 300;
-    margin-left: 4vw;
-    margin-right: 6vw;
-}
-
-#scnd_half {
+#reg_form {
     padding: 30px;
     border-radius: 25px;
     border: 1px solid #ACACAC;
     margin-right: 15vw;
     margin-left: 15vw;
     text-align: center;
+    margin-top: 5vw;
 }
 
-.half_inp {
+.reg_inp {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -39,11 +22,11 @@ main {
     font-weight: 400;
 }
 
-.half_inp:hover, .half_inp:focus{
+.reg_inp:hover, .reg_inp:focus {
     border: 2px solid #000;
 }
 
-#half_sub {
+#reg_sub {
     margin-top: 3vh;
     padding: 2vh;
     border-radius: 50px;
@@ -55,12 +38,23 @@ main {
     border: #234444 1px solid;
 }
 
-#half_sub:hover {
+#reg_sub:hover {
     color: black;
     background-color: white;
     cursor: pointer;
 }
 
-#half_sub:active {
+#reg_sub:active {
     background-color: rgb(172, 172, 172);
+}
+
+#toAuth {
+    font-size: 24pt;
+    color: #000;
+    font-weight: 500;
+    margin-left: 5vw;
+}
+
+#toAuth:hover {
+    color: #454545;
 }

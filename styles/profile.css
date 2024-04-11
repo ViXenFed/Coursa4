@@ -1,0 +1,15 @@
+main {
+    margin-left: 5vw;
+    font-size: 16pt;
+}
+main h1, main p {
+    margin-bottom: 2vh;
+}
+
+main p {
+    font-weight: 350;
+}
+
+#capy_paper {
+    text-align: center;
+}
