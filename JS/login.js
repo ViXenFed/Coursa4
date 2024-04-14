@@ -1,3 +1,5 @@
+let orderNum = 0;
+localStorage.getItem('orderNum') ? orderNum = localStorage.orderNum : null;
 // Имитация регистрации через localstorage
 let id;
 localStorage.getItem(id) ? id = localStorage.getItem(id) : id = 1;

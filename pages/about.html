@@ -38,27 +38,103 @@
                 <h2>Дизайн</h2>
                 <p>
                     Разработаем дизайн обложки, постера или чего угодно                </p>
-                <button>Рассчёт</button>
+                <button onclick="document.querySelector('dialog#design').showModal()">Рассчёт</button>
             </div>
             <div class="card">
                 <h2>Публикация</h2>
                 <p>
                     Через 10-14 дней после заказа Ваша книга будет во всех магазинах!                </p>
-                <button>Рассчёт</button>
+                <button onclick="document.querySelector('dialog#public').showModal()">Рассчёт</button>
             </div>
             <div class="card">
                 <h2>Редактура</h2>
                 <p>
                     Исправим все недочёты, ошибки, улучшим грамматику                </p>
-                <button>Рассчёт</button>
+                <button onclick="document.querySelector('dialog#edit').showModal()">Рассчёт</button>
             </div>
             <div class="card">
                 <h2>Тираж</h2>
                 <p>
                     Распечатаем что угодно в необходимом для Вас количестве                </p>
-                <button>Рассчёт</button>
+                <button onclick="document.querySelector('dialog#tirazh').showModal()">Рассчёт</button>
             </div>
         </div>
+
+        <!-- design -->
+        
+        <dialog id="design">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="" onchange="writePriceDesign()">
+                    <option value="">--Выберите формат постера--</option>
+                    <option value="A5">A5 (обложка)</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="A2">A2</option>
+                    <option value="A1">A1</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResult"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#design').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#design').showModal()">Открыть модальное дизайна</button>
+
+        <!-- public -->
+
+        <dialog id="public">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="pub" onchange="writePricePublic()">
+                    <option value="">--Выберите количество страниц--</option>
+                    <option value="100-250">100-250</option>
+                    <option value="251-400">251-400</option>
+                    <option value="401-600">451-600</option>
+                    <option value="601-800">651-800</option>
+                    <option value="801-1000">801-1000</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultPub"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#public').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#public').showModal()">Открыть модальное публикации</button>
+
+        <!-- edit -->
+
+        <dialog id="edit">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="ed" onchange="writePriceEdit()">
+                    <option value="">--Выберите количество страниц--</option>
+                    <option value="100-250">100-250</option>
+                    <option value="251-400">251-400</option>
+                    <option value="401-600">451-600</option>
+                    <option value="601-800">651-800</option>
+                    <option value="801-1000">801-1000</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultEdit"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#edit').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#edit').showModal()">Открыть модальное редактуры</button>
+
+        <!-- tirazh -->
+
+        <dialog id="tirazh">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="tir" onchange="writePriceTirazh()">
+                    <option value="">--Выберите количество распечаток--</option>
+                    <option value="100-200">100-200</option>
+                    <option value="201-300">201-300</option>
+                    <option value="301-400">301-400</option>
+                    <option value="401-500">401-500</option>
+                    <option value="501+">501+</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultTirazh"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#tirazh').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#tirazh').showModal()">Открыть модальное редактуры</button>
     </main>
     <!-- Footer -->
     <footer style="margin-top: 3vh;">
@@ -83,5 +159,7 @@
             <a href="tel:88005553535">88005553535</a>
         </div>
     </footer>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/preprice.js"></script>
 </body>
 </html>

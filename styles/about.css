@@ -48,3 +48,52 @@
   background-color: white;
   cursor: pointer;
 }
+
+/* modal */
+
+dialog {
+    margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+    border-radius: 1rem;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding: 10vw;
+    width: 60vw;
+    text-align: center;
+}
+
+dialog p {
+    margin-top: 2vh;
+    font-size: 24pt;
+    font-weight: 300;
+    margin-bottom: 2vh;
+}
+
+#closeModal {
+    padding: 2vh;
+    border-radius: 50px;
+    font-size: 18pt;
+    text-align: center;
+    background-color: #234444;
+    color:#FFF;
+    transition: 0.3s;
+    border: #234444 1px solid;
+}
+
+#closeModal:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#closeModal:active {
+    background-color: rgb(172, 172, 172);
+}
+
+dialog select {
+    padding: 1vw;
+    border: #ACACAC 1px solid;
+    font-size: 18pt;
+    border-radius: 24px; 
+}

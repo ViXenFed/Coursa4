@@ -32,7 +32,11 @@
         <div id="capy_paper">
             <img src="../img/capy_paper.png" alt="">
             <h2>Ваши заказы</h2>
-        </div>
+            <p>Не видите заказы? <a href="#" onclick="checkOrder()">Проверить заказ!</a></p>
+            <script src="../js/order.js"></script>
+            <div id="check_order" onload="getOrder()">
+            </div>
+        </div> 
     </main>
     <!-- Footer -->
     <footer style="margin-top: 3vh;">

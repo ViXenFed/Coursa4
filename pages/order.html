@@ -57,10 +57,10 @@
         <input type="text" name="" id="orderName" class="reg_inp req" placeholder="Наименование заказа *" required>
         <select name="" id="typeOrder" class="reg_inp req" required>
             <option value="">--Выберите тип заказа-- *</option>
-            <option value="Design">Дизайн</option>
-            <option value="Tirazh">Тираж</option>
-            <option value="Edit">Редактура</option>
-            <option value="Public">Публикация</option>
+            <option value="Дизайн">Дизайн</option>
+            <option value="Тираж">Тираж</option>
+            <option value="Редактура">Редактура</option>
+            <option value="Публикация">Публикация</option>
         </select>
         <input type="text" name="" id="" class="reg_inp" placeholder="Краткое описание">
         <input type="file" name="" id="coopMail" class="reg_inp" placeholder="Файл с содержимым заказа">
@@ -78,7 +78,7 @@
         <label for="adv" class="checkbox-label">Я согласен на рассылку рекламных сообщений</label><br>
         <button name="" id="reg_sub" value="" onclick="saveOrder(event)">Отправить</button>
     </form>`;
-    localStorage.session ? document.querySelector('body').innerHTML += pageIfSession : pageIfSession;
+    localStorage.session ? document.querySelector('body').innerHTML += pageIfSession : pageIfNotSession;
     </script>
 
     <dialog>

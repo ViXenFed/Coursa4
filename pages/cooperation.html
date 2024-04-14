@@ -32,7 +32,11 @@
                 <p>Главное условие нашего сотрудничества - взаимоуважение сторон. Для каждого автора мы рассчитываем процент индивидуально, и индивидуально обговариваем наше сотрудничество</p>
             </div>
         </div>
-        <form id="scnd_half">
+        <script>
+            if (localStorage.session) {
+                document.querySelector('main').innerHTML += `<h2 style="text-align: center;">Вы уже сотрудничаете!</h2>`
+            } else {
+                document.querySelector('main').innerHTML += `<form id="scnd_half">
             <h2>Регистрация</h2>
             <input type="text" name="" id="" class="half_inp" placeholder="Фамилия">
             <input type="text" name="" id="coopName" class="half_inp" placeholder="Имя">
@@ -40,7 +44,9 @@
             <input type="email" name="" id="coopMail" class="half_inp" placeholder="Почта">
             <input type="text" name="" id="coopPwd" class="half_inp" placeholder="Пароль">
             <input type="submit" name="" id="half_sub" value="Сотрудничать с нами!" onclick="getCoop(event)">
-        </form>
+        </form>`
+            }
+        </script>
     </main>
     <!-- Footer -->
     <footer style="margin-top: 3vh;">
