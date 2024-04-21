@@ -11,26 +11,46 @@
 <body>
     <!-- Заголовок -->
     <header>
-        <a href="../index.html" class="header__links">Главная</a>
-        <a href="order.html" class="header__links">Сделать заказ</a>
-        <a href="cooperation.html" class="header__links">Сотрудничество</a>
-        <a href="about.html" class="header__links">О нас</a>
+        <a href="../index.html" class="header__links hidden">Главная</a>
+        <a href="order.html" class="header__links hidden">Сделать заказ</a>
+        <a href="cooperation.html" class="header__links hidden">Сотрудничество</a>
+        <a href="about.html" class="header__links hidden">О нас</a>
         <script>
             if (localStorage.getItem('session')) {
-                document.querySelector('header').innerHTML += '<a href="profile.html"><img src="../img/capy_ava.png" alt=""></a>'
-                document.querySelector('header').innerHTML += '<A id="header__login" href="../index.html" onclick="getOut()">Выйти</A>'
+                document.querySelector('header').innerHTML += '<a href="profile.html" class="hidden"><img src="../img/capy_ava.png" alt=""></a>'
+                document.querySelector('header').innerHTML += '<A id="header__login" class="hidden" href="../index.html" onclick="getOut()">Выйти</A>'
             } else {
-                document.querySelector('header').innerHTML += '<A id="header__login" href="login.html">Войти</A>'
+                document.querySelector('header').innerHTML += '<A id="header__login" href="login.html" class="hidden">Войти</A>'
             }
-        </script>    
-        </header>
+        </script>
+        <!-- hamburger -->
+        <div class="burger-menu">
+            <button class="burger-btn">&#9776;</button>
+            <nav class="burger-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="order.html">Сделать заказ</a></li>
+                    <li><a href="cooperation.html">Сотрудничество</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="profile.html">Профиль</a></li>
+                </ul>
+                <Script>
+                    if (localStorage.getItem('session')) {
+                        document.querySelector('.burger-nav').innerHTML += `<a class="login-btn" onclick="getOut()">Выход</a>`
+                    } else {
+                        document.querySelector('.burger-nav').innerHTML += `<a class="login-btn" href="login.html">Вход</a>`
+                    }
+                </Script>
+            </nav>
+        </div>
+    </header>
     <!-- Content -->
     <main>
         <form id="reg_form">
             <h2>Вход</h2>
-            <input type="email" name="" id="" class="reg_inp" placeholder="Почта">
-            <input type="text" name="" id="" class="reg_inp" placeholder="Пароль">
-            <input type="submit" name="" id="reg_sub" value="Войти в личный кабинет" onclick="getCoop()">
+            <input type="email" name="" id="check_email" class="reg_inp" placeholder="Почта">
+            <input type="password" name="" id="check_password" class="reg_inp" placeholder="Пароль">
+            <input type="submit" name="" id="reg_sub" value="Войти в личный кабинет" onclick="getAuth(event)">
             <a href="login.html" id="toAuth">Нет аккаунта?</a>
         </form>
     </main>
@@ -58,5 +78,18 @@
         </div>
     </footer>
     <script src="../JS/login.js"></script>
+    <script>
+        localStorage.session ? window.location.replace('profile.html') : null;
+    </script>
+    <script>
+        document.querySelector('.burger-btn').addEventListener('click', function() {
+            const burgerNav = document.querySelector('.burger-nav');
+            if (burgerNav.style.display === 'none') {
+                burgerNav.style.display = 'block';
+            } else {
+                burgerNav.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* Технические установки */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .montserrat-light {
   font-family: "Montserrat", sans-serif;
@@ -40,7 +40,7 @@ header {
   padding-top: 2vh;
   border-bottom: solid black 1px;
   padding-bottom: 1vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 24pt;
 }
@@ -121,7 +121,8 @@ main {
   justify-content: space-between;
 }
 
-#flex_sotr, #flex_text {
+#flex_sotr,
+#flex_text {
   font-weight: 300;
 }
 
@@ -151,8 +152,8 @@ main {
 /* footer */
 footer {
   height: 200px;
-  background-color: #4E4E4E;
-  color: #FFF;
+  background-color: #4e4e4e;
+  color: #fff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -163,11 +164,95 @@ footer {
 }
 footer div a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   display: flex;
   transition: 0.3s;
 }
 footer div a:hover {
   text-decoration: underline;
   transition: 0.3s;
+}
+
+/* Media */
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 20pt;
+  }
+  footer {
+    font-size: 16pt;
+  }
+  img {
+    max-height: 200px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 425px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 10pt;
+  }
+  footer div a {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .hidden {
+    display: none;
+  }
+
+}
+
+
+/* hamburger */
+
+.burger-menu {
+  display: none;
+}
+
+.burger-btn {
+  display: flex;
+  color: #333;
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.burger-nav {
+  display: none;
+  color: #333;
+  background-color: white;
+  padding: 20px;
+}
+
+.burger-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.burger-nav a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* Стили для адаптивности */
+@media (max-width: 768px) {
+  .hidden {
+      display: none;
+  }
+  .burger-menu {
+      display: flex;
+  }
 }

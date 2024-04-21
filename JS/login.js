@@ -23,4 +23,7 @@ function getCoop(event) {
 
 function getOut() {
     delete localStorage.session;
+    delete localStorage.orderName;
+    delete localStorage.typeOrder;
+    delete localStorage.orderNum;
 }

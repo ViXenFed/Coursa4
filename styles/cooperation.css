@@ -64,3 +64,14 @@ main {
 #half_sub:active {
     background-color: rgb(172, 172, 172);
 }
+
+@media screen and (max-width: 425px) {
+    #first_half {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #half_sub {
+        font-size: 12pt;
+    }
+}

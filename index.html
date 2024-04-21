@@ -7,23 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Книги и чай</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/about.css">
 </head>
 
 <body>
     <!-- Заголовок -->
     <header>
-        <a href="index.html" class="header__links">Главная</a>
-        <a href="pages/order.html" class="header__links">Сделать заказ</a>
-        <a href="pages/cooperation.html" class="header__links">Сотрудничество</a>
-        <a href="pages/about.html" class="header__links">О нас</a>
+        <a href="index.html" class="header__links hidden">Главная</a>
+        <a href="pages/order.html" class="header__links hidden">Сделать заказ</a>
+        <a href="pages/cooperation.html" class="header__links hidden">Сотрудничество</a>
+        <a href="pages/about.html" class="header__links hidden">О нас</a>
         <script>
             if (localStorage.getItem('session')) {
-                document.querySelector('header').innerHTML += '<a href="pages/profile.html"><img src="img/capy_ava.png" alt=""></a>'
-                document.querySelector('header').innerHTML += '<A id="header__login" href="index.html" onclick="getOut()">Выйти</A>'
+                document.querySelector('header').innerHTML += '<a href="profile.html" class="hidden"><img src="img/capy_ava.png" alt=""></a>'
+                document.querySelector('header').innerHTML += '<A id="header__login" class="hidden" href="index.html" onclick="getOut()">Выйти</A>'
             } else {
-                document.querySelector('header').innerHTML += '<A id="header__login" href="pages/login.html">Войти</A>'
+                document.querySelector('header').innerHTML += '<A id="header__login" href="pages/login.html" class="hidden">Войти</A>'
             }
         </script>
+        <!-- hamburger -->
+        <div class="burger-menu">
+            <button class="burger-btn">&#9776;</button>
+            <nav class="burger-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="pages/order.html">Сделать заказ</a></li>
+                    <li><a href="pages/cooperation.html">Сотрудничество</a></li>
+                    <li><a href="pages/about.html">О нас</a></li>
+                    <li><a href="pages/profile.html">Профиль</a></li>
+                </ul>
+                <Script>
+                    if (localStorage.getItem('session')) {
+                        document.querySelector('.burger-nav').innerHTML += `<a class="login-btn" onclick="getOut()">Выход</a>`
+                    } else {
+                        document.querySelector('.burger-nav').innerHTML += `<a class="login-btn" href="login.html">Вход</a>`
+                    }
+                </Script>
+            </nav>
+        </div>
     </header>
     <!-- Контент -->
     <main>
@@ -40,6 +62,110 @@
                 <img src="img/CircleText.png" alt="" class="rotate_text">
             </div>
         </div>
+        <h1 style="text-align:center;">Основные услуги</h1>
+        <div id="twoOfThree">
+            <div class="card">
+                <h2>Дизайн</h2>
+                <p>
+                    Разработаем дизайн обложки, постера или чего угодно                </p>
+                <button onclick="document.querySelector('dialog#design').showModal()">Рассчёт</button>
+            </div>
+            <div class="card">
+                <h2>Публикация</h2>
+                <p>
+                    Через 10-14 дней после заказа Ваша книга будет во всех магазинах!                </p>
+                <button onclick="document.querySelector('dialog#public').showModal()">Рассчёт</button>
+            </div>
+            <div class="card">
+                <h2>Редактура</h2>
+                <p>
+                    Исправим все недочёты, ошибки, улучшим грамматику                </p>
+                <button onclick="document.querySelector('dialog#edit').showModal()">Рассчёт</button>
+            </div>
+            <div class="card">
+                <h2>Тираж</h2>
+                <p>
+                    Распечатаем что угодно в необходимом для Вас количестве                </p>
+                <button onclick="document.querySelector('dialog#tirazh').showModal()">Рассчёт</button>
+            </div>
+        </div>
+
+        <!-- design -->
+        
+        <dialog id="design">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="" onchange="writePriceDesign()">
+                    <option value="">--Выберите формат постера--</option>
+                    <option value="A5">A5 (обложка)</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="A2">A2</option>
+                    <option value="A1">A1</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResult"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#design').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#design').showModal()">Открыть модальное дизайна</button>
+
+        <!-- public -->
+
+        <dialog id="public">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="pub" onchange="writePricePublic()">
+                    <option value="">--Выберите количество страниц--</option>
+                    <option value="100-250">100-250</option>
+                    <option value="251-400">251-400</option>
+                    <option value="401-600">451-600</option>
+                    <option value="601-800">651-800</option>
+                    <option value="801-1000">801-1000</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultPub"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#public').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#public').showModal()">Открыть модальное публикации</button>
+
+        <!-- edit -->
+
+        <dialog id="edit">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="ed" onchange="writePriceEdit()">
+                    <option value="">--Выберите количество страниц--</option>
+                    <option value="100-250">100-250</option>
+                    <option value="251-400">251-400</option>
+                    <option value="401-600">451-600</option>
+                    <option value="601-800">651-800</option>
+                    <option value="801-1000">801-1000</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultEdit"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#edit').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#edit').showModal()">Открыть модальное редактуры</button>
+
+        <!-- tirazh -->
+
+        <dialog id="tirazh">
+            <h1>Рассчитывем..</h1>
+            <form action="/">
+                <select name="" id="tir" onchange="writePriceTirazh()">
+                    <option value="">--Выберите количество распечаток--</option>
+                    <option value="100-200">100-200</option>
+                    <option value="201-300">201-300</option>
+                    <option value="301-400">301-400</option>
+                    <option value="401-500">401-500</option>
+                    <option value="501+">501+</option>
+                </select>
+            </form>
+            <p>Примерная цена: <b id="preResultTirazh"></b></p>
+            <button id="closeModal" onclick="document.querySelector('dialog#tirazh').close()">Закрыть</button>
+        </dialog>
+        <button style="display: none;" onclick="document.querySelector('dialog#tirazh').showModal()">Открыть модальное редактуры</button>
+    </main>
     </main>
     <!-- Footer -->
     <footer>
@@ -59,11 +185,23 @@
             <a href="pages/login.html">Войти</p>
         </div>
         <div>
-            <a href="mailto:BooksNtea@pochta.ru">BooksNtea@pochta.ru</a>
-            <a href="tel:88005553535">88005553535</a>
+            <a href="mailto:BooksNtea@pochta.ru" class="contact">BooksNtea@pochta.ru</a>
+            <a href="tel:88005553535" class="contact">88005553535</a>
         </div>
     </footer>
-    <script src="../JS/login.js"></script>
+    <!-- scripts -->
+    <script src="JS/login.js"></script>
+    <script src="JS/preprice.js"></script>
+    <script>
+        document.querySelector('.burger-btn').addEventListener('click', function() {
+            const burgerNav = document.querySelector('.burger-nav');
+            if (burgerNav.style.display === 'none') {
+                burgerNav.style.display = 'block';
+            } else {
+                burgerNav.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -1,203 +1,226 @@
 /* content */
 main {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10vw;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
 }
 
 .ord_flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 #ord_btns {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 2vh;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 2vh;
 }
 
 .ord_a {
-    text-decoration: none;
-    padding: 1.3vw;
-    border-radius: 36px;
-    color: #FFF;
-    background-color: #234444;
-    font-size: 20pt;
-    font-weight: 300;
-    margin-right: 3vw;
-    transition: 0.3s;
-    border: #234444 1px solid;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  text-decoration: none;
+  padding: 1.3vw;
+  border-radius: 36px;
+  color: #fff;
+  background-color: #234444;
+  font-size: 20pt;
+  font-weight: 300;
+  margin-right: 3vw;
+  transition: 0.3s;
+  border: #234444 1px solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .ord_a:hover {
-    color: black;
-    background-color: white;
-    cursor: pointer;
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
 .ord_flex img {
-    height: 300px;
-    width: 300px;
-    display: flex;
+  height: 300px;
+  width: 300px;
+  display: flex;
 }
 
-#ord_flex_f, #ord_flex_s {
-    display: flex;
-    flex-direction: column;
+#ord_flex_f,
+#ord_flex_s {
+  display: flex;
+  flex-direction: column;
 }
 
 #ord_flex_s {
-    margin-right: 10vw;
+  margin-right: 10vw;
 }
 
 #p_ord_hed {
-    font-size: 24pt;
-    margin-left: 30vw;
-    margin-bottom: 2vh;
+  font-size: 24pt;
+  margin-left: 30vw;
+  margin-bottom: 2vh;
+  min-width: 25vw;
 }
 
 .rotate_text_ord {
-    animation: 10s linear 0s normal none infinite running rotate_text;
-    margin-left: 45vw;
-    margin-top: 4vh;
+  animation: 10s linear 0s normal none infinite running rotate_text;
+  margin-left: 45vw;
+  margin-top: 4vh;
 }
 @keyframes rotate_text_ord {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-  /* Форма */
+/* Форма */
 
-  #reg_form {
-    padding: 30px;
-    border-radius: 25px;
-    border: 1px solid #ACACAC;
-    margin-right: 15vw;
-    margin-left: 15vw;
-    text-align: center;
+#reg_form {
+  padding: 30px;
+  border-radius: 25px;
+  border: 1px solid #acacac;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  text-align: center;
 }
 
 .reg_inp {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin-left: 3vw;
-    margin-top: 2vh;
-    padding: 1.5vh;
-    border-radius: 50px;
-    border: 2px solid #ACACAC;
-    transition: 0.3s;
-    font-size: 16pt;
-    font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 3vw;
+  margin-top: 2vh;
+  padding: 1.5vh;
+  border-radius: 50px;
+  border: 2px solid #acacac;
+  transition: 0.3s;
+  font-size: 16pt;
+  font-weight: 400;
 }
 
-.reg_inp:hover, .reg_inp:focus {
-    border: 2px solid #000;
+.reg_inp:hover,
+.reg_inp:focus {
+  border: 2px solid #000;
 }
 
 #reg_sub {
-    margin-top: 3vh;
-    padding: 2vh;
-    border-radius: 50px;
-    font-size: 18pt;
-    text-align: center;
-    background-color: #234444;
-    color:#FFF;
-    transition: 0.3s;
-    border: #234444 1px solid;
+  margin-top: 3vh;
+  padding: 2vh;
+  border-radius: 50px;
+  font-size: 18pt;
+  text-align: center;
+  background-color: #234444;
+  color: #fff;
+  transition: 0.3s;
+  border: #234444 1px solid;
 }
 
 #reg_sub:hover {
-    color: black;
-    background-color: white;
-    cursor: pointer;
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
 #reg_sub:active {
-    background-color: rgb(172, 172, 172);
+  background-color: rgb(172, 172, 172);
 }
 
 #toAuth {
-    font-size: 24pt;
-    color: #000;
-    font-weight: 500;
-    margin-left: 5vw;
+  font-size: 24pt;
+  color: #000;
+  font-weight: 500;
+  margin-left: 5vw;
 }
 
 #toAuth:hover {
-    color: #454545;
+  color: #454545;
 }
 
 .checkbox-label {
-    font-size: 20pt;
-    height: 20px;
+  font-size: 20pt;
+  height: 20px;
 }
 
 .checkbox {
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 2px solid #ACACAC;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid #acacac;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .checkbox:checked {
-    background-color: #66bb6a;
+  background-color: #66bb6a;
 }
 
 /* modal */
 
 dialog {
-    margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-    border-radius: 1rem;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    padding: 10vw;
-    width: 60vw;
-    text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 1rem;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding: 10vw;
+  width: 60vw;
+  text-align: center;
 }
 
 dialog p {
-    margin-top: 2vh;
-    font-size: 24pt;
-    font-weight: 300;
-    margin-bottom: 2vh;
+  margin-top: 2vh;
+  font-size: 24pt;
+  font-weight: 300;
+  margin-bottom: 2vh;
 }
 
 #closeModal {
-    padding: 2vh;
-    border-radius: 50px;
-    font-size: 18pt;
-    text-align: center;
-    background-color: #234444;
-    color:#FFF;
-    transition: 0.3s;
-    border: #234444 1px solid;
+  padding: 2vh;
+  border-radius: 50px;
+  font-size: 18pt;
+  text-align: center;
+  background-color: #234444;
+  color: #fff;
+  transition: 0.3s;
+  border: #234444 1px solid;
 }
 
 #closeModal:hover {
-    color: black;
-    background-color: white;
-    cursor: pointer;
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
 #closeModal:active {
-    background-color: rgb(172, 172, 172);
+  background-color: rgb(172, 172, 172);
+}
+
+/* media */
+
+@media screen and (max-width: 960px) {
+  .ord_a {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  form input {
+    font-size: 14pt;
+  }
 }

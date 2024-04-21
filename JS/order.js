@@ -73,3 +73,4 @@ function checkOrder() {
     document.querySelector('#check_order').innerHTML = '';
     getOrder();
 }
+
