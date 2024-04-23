@@ -15,7 +15,7 @@ function getCoop(event) {
     } else {
         localStorage.setItem('name', document.getElementById('coopName').value)
         localStorage.setItem('password', document.getElementById('coopPwd').value)
-        localStorage.setItem('mail', document.getElementById('coopMail'.value))
+        localStorage.setItem('mail', document.getElementById('coopMail').value)
         localStorage.setItem('session', 'true')
         window.location.replace('../pages/profile.html');
     }
