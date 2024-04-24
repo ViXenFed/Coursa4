@@ -46,10 +46,14 @@
     <!-- Content -->
     <main>
         <div id="first_half">
-            <img src="../img/capy_glass.png" alt="">
+            <img src="../img/capy_glass.png" alt="" style="max-height: 250px">
             <div id="first_half__text">
                 <p><b>Сотрудничать с нами!</b></p>
-                <p>Главное условие нашего сотрудничества - взаимоуважение сторон. Для каждого автора мы рассчитываем процент индивидуально, и индивидуально обговариваем наше сотрудничество</p>
+                <p style="margin-bottom:3vh ;">
+                    Главное условие нашего сотрудничества - взаимовыгода сторон. При заказе публикации Вашей продукции мы можем предложить Вам сотрудничество. Для этого мы рассчитываем
+                    оперативную оценку присланных материалов, в том числе оцениваем возможный риск и прибыль. В случае нашей заинтересованности - мы запросим у вас сопроводительное письмо,
+                    в котором Вам необходимо рассказать о себе как об авторе, а также о вашей книге: жанр, целевую аудиторию, и синопсис (краткое изложение сценария)
+                </p>
             </div>
         </div>
         <script>
@@ -59,10 +63,10 @@
                 document.querySelector('main').innerHTML += `<form id="scnd_half">
             <h2>Регистрация</h2>
             <input type="text" name="" id="" class="half_inp" placeholder="Фамилия">
-            <input type="text" name="" id="coopName" class="half_inp" placeholder="Имя">
+            <input type="text" name="" id="coopName" class="half_inp" placeholder="Имя*">
             <input type="text" name="" id="" class="half_inp" placeholder="Отчество">
-            <input type="email" name="" id="coopMail" class="half_inp" placeholder="Почта">
-            <input type="text" name="" id="coopPwd" class="half_inp" placeholder="Пароль">
+            <input type="email" name="" id="coopMail" class="half_inp" placeholder="Почта*">
+            <input type="text" name="" id="coopPwd" class="half_inp" placeholder="Пароль*">
             <input type="submit" name="" id="half_sub" value="Сотрудничать с нами!" onclick="getCoop(event)">
         </form>`
             }

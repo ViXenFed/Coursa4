@@ -20,7 +20,7 @@
         <a href="pages/about.html" class="header__links hidden">О нас</a>
         <script>
             if (localStorage.getItem('session')) {
-                document.querySelector('header').innerHTML += '<a href="profile.html" class="hidden"><img src="img/capy_ava.png" alt=""></a>'
+                document.querySelector('header').innerHTML += '<a href="pages/profile.html" class="hidden"><img src="img/capy_ava.png" alt=""></a>'
                 document.querySelector('header').innerHTML += '<A id="header__login" class="hidden" href="index.html" onclick="getOut()">Выйти</A>'
             } else {
                 document.querySelector('header').innerHTML += '<A id="header__login" href="pages/login.html" class="hidden">Войти</A>'
@@ -89,10 +89,22 @@
                 <button onclick="document.querySelector('dialog#tirazh').showModal()">Рассчёт</button>
             </div>
         </div>
+        <h1 style="text-align: center;">Наши партнёры</h1>
+        <div id="twoOfThree">
+            <marquee behavior="scroll" direction="left" truespeed scrolldelay="50">
+                <img src="img/marq/chitai-gorod.png" alt="" class="marq" style="height: 150px; width: 250px;">
+                <img src="img/marq/labirint.jpg" alt="" class="marq" style="height: 150px; width: 350px;">
+                <img src="img/marq/bookvoed.jpg" alt="" class="marq" style="height: 150px; width: 300px;">
+                <img src="img/marq/bookbridge.png" alt="" class="marq" style="height: 250px; width: 250px;">
+                <img src="img/marq/live_word.jpg" alt="" class="marq" style="height: 250px; width: 250px;">
+                <img src="img/marq/biblio.jpg" alt="" class="marq" style="height: 250px; width: 250px;">
+            </marquee>
+        </div>
 
         <!-- design -->
         
         <dialog id="design">
+            <p>Цена рассчитывается за единицу продукции, изготовленной в электронном формате размером необходимого бумажного формата А1 - А5</p>
             <h1>Рассчитывем..</h1>
             <form action="/">
                 <select name="" id="" onchange="writePriceDesign()">
@@ -112,15 +124,16 @@
         <!-- public -->
 
         <dialog id="public">
+            <p>Наше издательство с радостью сотрудничает с начинающими авторами. За небольшую плату мы издадим вашу книгу у наших партнёров-магазинов. Цена указана за количество книг, планируемых к продаже</p>
             <h1>Рассчитывем..</h1>
             <form action="/">
                 <select name="" id="pub" onchange="writePricePublic()">
-                    <option value="">--Выберите количество страниц--</option>
-                    <option value="100-250">100-250</option>
-                    <option value="251-400">251-400</option>
-                    <option value="401-600">451-600</option>
-                    <option value="601-800">651-800</option>
-                    <option value="801-1000">801-1000</option>
+                    <option value="">--Выберите количество книг--</option>
+                    <option value="100-250">10-25</option>
+                    <option value="251-400">25-40</option>
+                    <option value="401-600">41-60</option>
+                    <option value="601-800">61-80</option>
+                    <option value="801-1000">81-100</option>
                 </select>
             </form>
             <p>Примерная цена: <b id="preResultPub"></b></p>
@@ -131,12 +144,13 @@
         <!-- edit -->
 
         <dialog id="edit">
+            <p>Наши редакторы с опытом более 5 лет проверят и улучшат грамматику вашей печатной продукции. Цена рассчитывается за количество Word-страниц.</p>
             <h1>Рассчитывем..</h1>
             <form action="/">
                 <select name="" id="ed" onchange="writePriceEdit()">
                     <option value="">--Выберите количество страниц--</option>
                     <option value="100-250">100-250</option>
-                    <option value="251-400">251-400</option>
+                    <option value="251-400">251-450</option>
                     <option value="401-600">451-600</option>
                     <option value="601-800">651-800</option>
                     <option value="801-1000">801-1000</option>
@@ -150,6 +164,7 @@
         <!-- tirazh -->
 
         <dialog id="tirazh">
+            <p>Издательство может распечатать брошюрки и другую необходимую листовку форматом А5 в необходимом Вам количестве</p>
             <h1>Рассчитывем..</h1>
             <form action="/">
                 <select name="" id="tir" onchange="writePriceTirazh()">

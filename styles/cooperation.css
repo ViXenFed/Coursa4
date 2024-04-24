@@ -74,4 +74,12 @@ main {
     #half_sub {
         font-size: 12pt;
     }
+
+    
+}
+
+@media screen and (max-width: 765px) {
+    p {
+        font-size: 14pt;
+    }
 }

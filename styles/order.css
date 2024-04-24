@@ -3,6 +3,7 @@ main {
   display: flex;
   flex-direction: row;
   margin-left: 10vw;
+  min-height: calc(60vh - 150px);
 }
 
 .ord_flex {
@@ -54,6 +55,13 @@ main {
 
 #ord_flex_s {
   margin-right: 10vw;
+}
+
+.ord_flex {
+  height: max-content;
+  /* max-height: 30vh; */
+  padding: 0;
+  margin: 0;
 }
 
 #p_ord_hed {
